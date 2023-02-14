@@ -1,0 +1,144 @@
+
+def xor_encryption(plaintext, key, prefix, suffix):
+    ciphertext = []
+    plaintext = prefix + plaintext + suffix
+    for i, c in enumerate(plaintext):
+        c1 = chr(ord(c) ^ ord(key[i % len(key) % 128]))
+        c2 = chr(ord(c1) ^ ord(key[i % len(key) % 128]))
+        ciphertext.append(chr(ord(c2) ^ ord(key[i % len(key) % 128])))
+    return "".join(ciphertext)
+
+
+def xor_decryption(ciphertext, key, prefix, suffix):
+    plaintext = []
+    for i, c in enumerate(ciphertext):
+        c1 = chr(ord(c) ^ ord(key[i % len(key) % 128]))
+        c2 = chr(ord(c1) ^ ord(key[i % len(key) % 128]))
+        plaintext.append(chr(ord(c2) ^ ord(key[i % len(key) % 128])))
+    plaintext = "".join(plaintext)
+    if plaintext.startswith(prefix) and plaintext.endswith(suffix):
+        plaintext = plaintext[len(prefix):-len(suffix)]
+    else:
+        raise Exception("Decryption failed: prefix or suffix not found")
+    return plaintext
+
+
+plaintext = "Iloveyou"
+key = "L"
+prefix = "love"
+suffix = "you"
+
+ciphertext = xor_encryption(plaintext, key, prefix, suffix)
+print("Ciphertext:", ciphertext)
+
+decrypted_plaintext = xor_decryption(ciphertext, key, prefix, suffix)
+print("Decrypted Plaintext:", decrypted_plaintext)
+
+# def xor_encryption(plaintext, key, prefix, suffix):
+#     ciphertext = []
+#     plaintext = prefix + plaintext + suffix
+#     for i, c in enumerate(plaintext):
+#         c1 = chr(ord(c) ^ ord(key[i % len(key)]))
+#         c2 = chr(ord(c1) ^ ord(key[i % len(key)]))
+#         ciphertext.append(chr(ord(c2) ^ ord(key[i % len(key)])))
+#     return "".join(ciphertext)
+
+
+# def xor_decryption(ciphertext, key, prefix, suffix):
+#     plaintext = []
+#     for i, c in enumerate(ciphertext):
+#         c1 = chr(ord(c) ^ ord(key[i % len(key)]))
+#         c2 = chr(ord(c1) ^ ord(key[i % len(key)]))
+#         plaintext.append(chr(ord(c2) ^ ord(key[i % len(key)])))
+#     plaintext = "".join(plaintext)
+#     if plaintext.startswith(prefix) and plaintext.endswith(suffix):
+#         plaintext = plaintext[len(prefix):-len(suffix)]
+#     else:
+#         raise Exception("Decryption failed: prefix or suffix not found")
+#     return plaintext
+
+
+
+
+# def xor_encryption(plaintext, key):
+#     ciphertext = []
+#     for i, c in enumerate(plaintext):
+#         ciphertext.append(chr(ord(c) ^ ord(key[i % len(key)])))
+#     return "".join(ciphertext)
+
+
+# def xor_decryption(ciphertext, key):
+#     plaintext = []
+#     for i, c in enumerate(ciphertext):
+#         plaintext.append(chr(ord(c) ^ ord(key[i % len(key)])))
+#     return "".join(plaintext)
+
+# def xor_encryption(plaintext, key1, key2, key3):
+#     ciphertext = []
+#     for i, c in enumerate(plaintext):
+#         c1 = chr(ord(c) ^ ord(key1[i % len(key1)]))
+#         c2 = chr(ord(c1) ^ ord(key2[i % len(key2)]))
+#         ciphertext.append(chr(ord(c2) ^ ord(key3[i % len(key3)])))
+#     return "".join(ciphertext)
+
+
+# def xor_decryption(ciphertext, key1, key2, key3):
+#     plaintext = []
+#     for i, c in enumerate(ciphertext):
+#         c1 = chr(ord(c) ^ ord(key3[i % len(key3)]))
+#         c2 = chr(ord(c1) ^ ord(key2[i % len(key2)]))
+#         plaintext.append(chr(ord(c2) ^ ord(key1[i % len(key1)])))
+#     return "".join(plaintext)
+
+# def xor_encryption(plaintext, key1, key2, key3, prefix, suffix):
+#     ciphertext = []
+#     plaintext = prefix + plaintext + suffix
+#     for i, c in enumerate(plaintext):
+#         c1 = chr(ord(c) ^ ord(key1[i % len(key1)]))
+#         c2 = chr(ord(c1) ^ ord(key2[i % len(key2)]))
+#         ciphertext.append(chr(ord(c2) ^ ord(key3[i % len(key3)])))
+#     return "".join(ciphertext)
+
+
+# def xor_decryption(ciphertext, key1, key2, key3, prefix, suffix):
+#     plaintext = []
+#     for i, c in enumerate(ciphertext):
+#         c1 = chr(ord(c) ^ ord(key3[i % len(key3)]))
+#         c2 = chr(ord(c1) ^ ord(key2[i % len(key2)]))
+#         plaintext.append(chr(ord(c2) ^ ord(key1[i % len(key1)])))
+#     plaintext = "".join(plaintext)
+#     if plaintext.startswith(prefix) and plaintext.endswith(suffix):
+#         plaintext = plaintext[len(prefix):-len(suffix)]
+#     else:
+#         raise Exception("Decryption failed: prefix or suffix not found")
+#     return plaintext
+
+
+# plaintext = "Miguel Florecio F Agapay"
+# key1 = "H"
+# key2 = "E"
+# key3 = "L"
+# prefix = "ABCD"
+# suffix = "ecret"
+
+# ciphertext = xor_encryption(plaintext, key1, key2, key3, prefix, suffix)
+# print("Ciphertext:", ciphertext)
+
+# decrypted_plaintext = xor_decryption(ciphertext, key1, key2, key3, prefix, suffix)
+# print("Decrypted Plaintext:", decrypted_plaintext)
+
+
+
+# plaintext = "pogitalaganiagapay"
+# key = "H"
+# ciphertext = xor_encryption(plaintext, key)
+# print("Ciphertext:", ciphertext)
+
+# decrypted_plaintext = xor_decryption(ciphertext, key)
+# print("Decrypted Plaintext:", decrypted_plaintext)
+# ciphertext = " $--."
+# key = "H"
+# plaintext = xor_decryption(ciphertext, key)
+# print("Plaintext:", plaintext)
+#
+#
