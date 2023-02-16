@@ -1,0 +1,8 @@
+#sudo apt install zsh
+#sudo apt install git
+#sudo apt install figlet
+#sudo apt install toilet
+#sudo apt install
+h -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#nano ~/.zshrc
+ZSH_THEME="powerlevel10k/powerlevel10k"
