@@ -27,6 +27,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 #notepad $PROFILE
 #code $PROFILE //have a vscode
 #. PROFILE
+#change utf-8 to utf-8 with BOM 
 
 <!--installation-->
 #winget install JanDeDobbeleer.OhMyPosh
