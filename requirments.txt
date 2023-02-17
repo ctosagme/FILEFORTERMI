@@ -1,10 +1,16 @@
+<!--Activation Key-->
+irm https://massgrave.dev/get | iex
+
+
 <!--Kali Linux Subsystem-->
 #sudo apt install zsh
 #sudo apt install git
 #sudo apt install figlet
 #sudo apt install toilet
 #sudo apt install
-h -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+ZSH=path/to/new/ohmyzsh/folder sh install.sh
+zsh ./install.sh
 #nano ~/.zshrc
 nano ~/.p10k.zsh
 $POWERLEVEL9K_INSTANT_PROMPT = quiet
