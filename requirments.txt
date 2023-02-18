@@ -15,6 +15,7 @@ zsh ./install.sh
 nano ~/.p10k.zsh
 $POWERLEVEL9K_INSTANT_PROMPT = quiet
 ZSH_THEME="powerlevel10k/powerlevel10k"
+mv figlet-fonts/* figlet && rm -rf figlet-fonts
 
 
 <!--subsystem-->
