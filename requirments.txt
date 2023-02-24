@@ -36,6 +36,10 @@ mv figlet-fonts/* figlet && rm -rf figlet-fonts
 #Set-ExecutionPolicy RemoteSigned
 #New-Item -ItemType Directory -Force ~/.config;New-Item -ItemType file ~/.config/starship.toml;
 
+<!--cannot run script-->
+Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
+Set-ExecutionPolicy Unrestricted
+
 <!-- debloat-->
 iwr -useb https://christitus.com/win | iex
 
