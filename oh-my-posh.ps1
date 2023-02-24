@@ -1,1 +1,1 @@
-start-process PowerShell -verb runas || winget install JanDeDobbeleer.OhMyPosh
+Start-Process winget -Verb runas -ArgumentList "install", "JanDeDobbeleer.OhMyPosh", "-f", "C:\path\to\ohmyposhinstallerfile.exe"
