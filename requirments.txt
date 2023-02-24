@@ -36,6 +36,10 @@ mv figlet-fonts/* figlet && rm -rf figlet-fonts
 #Set-ExecutionPolicy RemoteSigned
 #New-Item -ItemType Directory -Force ~/.config;New-Item -ItemType file ~/.config/starship.toml;
 
+<!--problem with psgallery-->
+When you try to install PSReadLine if you encounter an error you may need to delete the plugin and then re-install it.  You can browse these files from this folder location: C:\Program Files\WindowsPowerShell\Modules\PSReadline
+then rerun the script
+
 <!--cannot run script-->
 Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
 Set-ExecutionPolicy Unrestricted
@@ -46,3 +50,5 @@ iwr -useb https://christitus.com/win | iex
 <!--venv installation-->
 python -m venv
 #b:/python/venv/Scripts/python.exe -m pip install -U pip install <package>
+
+
